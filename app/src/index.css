@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes kenburns-in {
+  from { transform: scale(1) translate3d(0, 0, 0); }
+  to   { transform: scale(1.1) translate3d(0, 0, 0); }
+}
+@keyframes kenburns-out {
+  from { transform: scale(1.1) translate3d(0, 0, 0); }
+  to   { transform: scale(1) translate3d(0, 0, 0); }
+}
+@keyframes kenburns-left {
+  from { transform: scale(1.08) translate3d(1.5%, 0, 0); }
+  to   { transform: scale(1.08) translate3d(-1.5%, 0, 0); }
+}
+@keyframes kenburns-right {
+  from { transform: scale(1.08) translate3d(-1.5%, 0, 0); }
+  to   { transform: scale(1.08) translate3d(1.5%, 0, 0); }
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Walking meerkat — absurd around-the-wall path for the silo-wall scene */
+@keyframes silo-trek {
+  0%   { top: 55%; left: 22%; }
+  5%   { top: 55%; left: 22%; }
+  25%  { top: 82%; left: 22%; }   /* down the left side */
+  45%  { top: 82%; left: 76%; }   /* across the bottom */
+  65%  { top: 55%; left: 76%; }   /* up the right side */
+  80%  { top: 55%; left: 76%; }   /* pause at destination */
+  100% { top: 55%; left: 22%; }   /* snap back for loop */
+}
+
+/* Subtle bob while walking */
+@keyframes walk-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50%      { transform: translateY(-2px) rotate(2deg); }
+}
+
+/* Dust/ember particles rising at Code Anvils */
+@keyframes dust-rise {
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0; }
+  15%  { opacity: var(--peak-opacity, 0.7); }
+  85%  { opacity: var(--peak-opacity, 0.7); }
+  100% { transform: translate3d(6px, -80vh, 0) scale(0.5); opacity: 0; }
+}
