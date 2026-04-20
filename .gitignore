@@ -24,10 +24,7 @@ Thumbs.db
 *.swp
 *.swo
 
-# Generated images — too large for git, regenerate via scripts/generate_images.py
-# or sync from Google Drive on other machines
-reference/images/generated/
-reference/images/anchors/
+# Reference images are now tracked — see reference/images/generated/
 
 # Python venv artefacts at project root
 pyvenv.cfg
